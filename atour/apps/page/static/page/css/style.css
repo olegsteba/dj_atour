@@ -1,0 +1,913 @@
+@charset "UTF-8";
+* {
+  scrollbar-color: #CF0A10 #668097;
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  height: 0.5em;
+  width: 0.5em;
+}
+
+*::-webkit-scrollbar-track {
+  background: #668097;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #CF0A10;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  font-family: Roboto, Tahoma,  Verdana, Geneva, Helvetica, sans-serif;
+  font-size: 12pt;
+  color: #281D2B;
+  background: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #668097;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #CF0A10;
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0.2em;
+  padding: 0.2em 0.5em;
+  color: #ED3237;
+  text-align: center;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-bottom: 0.1em dotted #ED3237;
+  display: inline-block;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+hr {
+  border: #CB1A33 0.1em dashed;
+}
+
+input, textarea, select {
+  margin: 0;
+  padding: 0.3em !important;
+  font-family: Roboto, Tahoma,  Verdana, Geneva, Helvetica, sans-serif !important;
+  font-size: 1em !important;
+  border: 0.1em solid #ED3237;
+  border-radius: 0.3em;
+}
+
+input[class=submit], .button-red {
+  margin: 0;
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 0.3em;
+  cursor: pointer;
+  color: #FFFFFF;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed3237+0,cd070d+100 */
+  background: #ed3237;
+  background: -webkit-gradient(linear, left top, right top, from(#ed3237), to(#cd070d));
+  background: linear-gradient(to right, #ed3237 0%, #cd070d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed3237', endColorstr='#cd070d',GradientType=1 );
+}
+
+input[class=submit]:hover, .button-red:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed3237+0,cd070d+100 */
+  background: #cd070d;
+  background: -webkit-gradient(linear, left top, right top, from(#cd070d), to(#ed3237));
+  background: linear-gradient(to right, #cd070d 0%, #ed3237 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cd070d', endColorstr='#ed3237',GradientType=1 );
+}
+
+.clearing {
+  height: 0px;
+  clear: both;
+}
+
+.container {
+  position: relative !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  max-width: 1110px !important;
+}
+
+.padding-05em {
+  padding: 0.5em !important;
+}
+
+.margin-top-1em {
+  margin-top: 1em !important;
+}
+
+/* Стили основной разметики сайта */
+#site-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  height: 100vh;
+  font-size: 1em;
+}
+
+#site-wrapper .site-item {
+  width: 100%;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  background: #F3F5F7;
+  color: #556A7D;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  background: url(../images/fon-footer.jpg) repeat-x left center;
+  background-size: auto 100%;
+  color: #FFFFFF;
+}
+
+footer a {
+  color: #FFFFFF;
+}
+
+footer a:hover {
+  color: #FFFFFF;
+}
+
+/* Стили для блока header */
+.header-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header-container .header-item {
+  margin: 0;
+  padding: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.333%;
+          flex: 0 0 33.333%;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+/* Стили для главного меню сайта*/
+nav {
+  position: relative;
+  margin: 0;
+  padding: 0.5em;
+  background: url(../images/fon-menu_v2.png) repeat-x left center;
+  background-size: auto 100%;
+  border-bottom: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+  min-height: 1.5em;
+  overflow: hidden;
+}
+
+nav .main-menu-icon {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 2em;
+  height: 1.5em;
+  display: none;
+  z-index: 99;
+  cursor: pointer;
+}
+
+nav .main-menu-icon::after, nav .main-menu-icon::before, nav .main-menu-icon span {
+  content: '';
+  background-color: #FFFFFF;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  height: 0.28em;
+  left: 0;
+  border-radius: 1em;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+nav .main-menu-icon::before {
+  top: 0;
+}
+
+nav .main-menu-icon::after {
+  bottom: 0;
+}
+
+nav .main-menu-icon span {
+  top: 0.6em;
+}
+
+nav .main-menu-icon.active::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 0.5em;
+}
+
+nav .main-menu-icon.active::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 0.7em;
+}
+
+nav .main-menu-icon.active span {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+nav ul.main-menu-list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+nav ul.main-menu-list li {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul.main-menu-list li a {
+  margin: 0;
+  padding: 0.4em 0.7em 0.2em 0.7em;
+  text-decoration: none;
+  color: #FFFFFF;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 0.1em solid transparent;
+}
+
+nav ul.main-menu-list li a:hover {
+  border-bottom: 0.1em solid #FFFFFF;
+  border-radius: 0.5em;
+  background: #FFFFFF;
+  color: #668097;
+}
+
+/* Стили для блока main */
+main.content {
+  margin: 0;
+  padding: 0;
+  background: url(../images/fon-content.jpg) no-repeat center bottom;
+  background-size: 100% auto;
+}
+
+main.content .main-container {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+main.content .main-container .main-column {
+  margin: 0;
+  padding: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 75%;
+          flex: 0 0 75%;
+}
+
+main.content .main-container .side-column {
+  margin: 0;
+  padding: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+}
+
+/* Стли для блока наши услуги */
+.block-service {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-gap: 0.7em;
+}
+
+.block-service .service-item {
+  margin: 0;
+  padding: 0;
+}
+
+.block-service .service-item.tow-row {
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / span 2;
+}
+
+.block-service .service-item .service-image {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.block-service .service-item .service-image:hover {
+  border: 0.1em solid #CB1A33;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.block-service .service-item .service-title {
+  margin: 0;
+  padding: 2%;
+  position: absolute;
+  bottom: 3em;
+  background: #ED3237;
+  width: 96%;
+  height: 2.8em;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-transform: uppercase;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.block-service .service-item .service-price {
+  position: absolute;
+  bottom: 1em;
+  color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.block-service .service-item .service-stiker-new {
+  position: absolute;
+  top: 0;
+}
+
+/* Стили для блока горящие туры */
+.tour-item {
+  position: relative;
+  padding: 0;
+  margin: 0 0 0.5em 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.tour-item::after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.tour-item:hover {
+  border: 0.1em solid #CB1A33;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.tour-item .tour-image {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.tour-item .tour-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tour-item .tour-title {
+  margin: 0.5em 0 0 0;
+  padding: 0;
+  color: #668097;
+  height: 1.2em;
+  overflow: hidden;
+  font-size: 1.2em;
+}
+
+.tour-item .tour-price {
+  position: relative;
+  display: inline-block;
+  margin: 1em 0 0.5em 1em;
+  padding: 0.4em 0.4em 0.4em 1.4em;
+  background: #ED3237;
+  background-size: auto 100%;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #FFFFFF;
+  font-style: italic;
+  height: 1.2em;
+  float: right;
+  border: 0.1em solid #FFFFFF;
+  border-radius: 0.3em;
+  -webkit-clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 0 50%);
+          clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 0 50%);
+  border: 0.1em solid #FFFFFF;
+}
+
+/* Стили для блока туроператоров */
+.block-tour-operator {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.block-tour-operator .carousel-tour-operator {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.block-tour-operator ul.tour-operator {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.block-tour-operator ul.tour-operator li.operator-item {
+  margin: 0.5em;
+  padding: 0;
+  list-style: none;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 115px;
+          flex: 0 0 115px;
+}
+
+.block-tour-operator ul.tour-operator li.operator-item div.operator-logo {
+  margin: 0;
+  padding: 0;
+  border-radius: 0.5em;
+  background: #FFFFFF;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.block-tour-operator ul.tour-operator li.operator-item img {
+  display: block;
+}
+
+/* Стили для блока обращение директора */
+.block-slogan-director {
+  margin: 0;
+  padding: 0;
+  border: 0.1em solid #FFFFFF;
+  background: url(../images/fon-slogan_line.png) repeat-y center top;
+  background-size: 100% auto;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+  border-radius: 0.3em;
+  overflow: hidden;
+}
+
+.block-slogan-director .block-slogan-director-content {
+  margin: 0;
+  padding: 0 1em 0.5em 1em;
+  background: url(../images/fon-slogan.png) no-repeat center top;
+  background-size: 100% auto;
+}
+
+.block-slogan-director .slogan-container {
+  position: relative;
+  margin: 1em 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 1fr;
+      grid-template-columns: 20% 1fr;
+  grid-gap: 1em;
+}
+
+.block-slogan-director .slogan-container .slogan-item {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: justify;
+}
+
+.block-slogan-director .slogan-container .slogan-foto {
+  margin: 0;
+  padding: 0;
+}
+
+.block-slogan-director .slogan-container .slogan-foto img {
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+  -webkit-box-shadow: 0.3em 0.3em 0.8em 0.1em #668097;
+          box-shadow: 0.3em 0.3em 0.8em 0.1em #668097;
+}
+
+/* Стили для блока отзывов */
+.block-reviews {
+  margin: 0;
+  padding: 0;
+  background: url(../images/fon-appeal.jpg) repeat center center;
+}
+
+.carousel-review-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.review-container {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.review-container .review-item {
+  margin: 0;
+  padding: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+}
+
+.review-container .review-item .review-content {
+  margin: 0;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.review-container .review-item .review-content:hover {
+  background: #FFFFFF;
+  border: 0.1em solid #CB1A33;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.review-container .review-item .review-content .review-date {
+  color: #556A7D;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.review-container .review-item .review-content .review-fio {
+  font-weight: bold;
+}
+
+.review-container .review-item .review-content .review-description {
+  text-align: justify;
+}
+
+/* Стили для блока footer */
+.footer-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer-container .footer-item {
+  margin: 0;
+  padding: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 33.333%;
+          flex: 0 0 33.333%;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+/* Стили для блока контакты в шапке и подвале */
+.block-contact {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2em 1fr;
+      grid-template-columns: 2em 1fr;
+  grid-gap: 0.25em;
+}
+
+.block-contact .contact-cell {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.block-contact .contact-text {
+  text-align: left;
+}
+
+/* Стили для блока мы на связи в шапке и подвале*/
+.block-order-call {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 0.25em;
+}
+
+.block-socnet [class^="icon-"] {
+  margin: 0.2em;
+  padding: 0.3em 0.3em;
+  display: inline-block;
+  border-radius: 100%;
+  color: #FFFFFF;
+}
+
+.block-socnet .icon-vkontakte {
+  background: #5C7FA7;
+}
+
+.block-socnet .icon-odnoklassniki {
+  background: #EB712E;
+}
+
+.footer .block-socnet [class^="icon-"] {
+  color: #CB1A33;
+}
+
+.footer .block-socnet .icon-vkontakte {
+  background: #FFFFFF;
+}
+
+.footer .block-socnet .icon-odnoklassniki {
+  background: #FFFFFF;
+}
+
+/* Стили для разных разрешений */
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  #site-wrapper {
+    font-size: 0.78em;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  #site-wrapper {
+    font-size: 0.9em;
+  }
+  .header-container .header-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+  .header-container .header-logo {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  nav ul.main-menu-list {
+    margin-top: -100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  nav ul.main-menu-list.active {
+    margin-top: 0%;
+  }
+  nav ul.main-menu-list li {
+    margin: 0 auto;
+  }
+  nav .main-menu-icon {
+    display: block;
+  }
+  main.content .main-container .main-column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
+  }
+  main.content .main-container .side-column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+  }
+  .block-service {
+    -ms-grid-columns: 1fr  1fr;
+        grid-template-columns: 1fr  1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .block-service .service-item.tow-row {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+    -ms-grid-row: 4;
+    grid-row: 4;
+  }
+  .block-slogan-director .block-slogan-director-content {
+    background-position-y: bottom;
+  }
+  .block-slogan-director .slogan-container {
+    position: relative;
+    margin: 1em 0;
+    padding: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 1em;
+  }
+  .block-slogan-director .slogan-container .slogan-foto img {
+    width: 50%;
+  }
+  .footer-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer-container .footer-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+  .footer-container .footer-logo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  #site-wrapper {
+    font-size: 1em;
+  }
+  .header-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header-container .header-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+  .header-container .header-logo {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  main.content .main-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main.content .main-container .main-column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  main.content .main-container .side-column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .footer-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer-container .footer-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .footer-container .footer-contact {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" href="images/favicon.png"> 
+    <link rel="stylesheet" href="{% static 'page/fonts/stylesheet.css'%}">
+    <link rel="stylesheet" href="{% static 'page/css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'page/css/fontello.css'%}">
+    <script type="text/javascript" src="{% static 'page/js/jquery-3.6.0.js'%}"></script>
+    <script type="text/javascript" src="{% static 'page/js/main.js'%}"></script>
+</head>
+<body>
+    <script type="text/javascript"></script>
+    <div id="site-wrapper">
+        <header class="header site-item">
+            <div class="container header-container">
+                <div class="header-contact header-item">
+                    <div class="padding-05em block-contact">
+                        <div class="contact-icon contact-cell"><span class="icon-location"></span></div>
+                        <div class="contact-text contact-cell">г. Тюмень, ул. Свободы, 83</div>
+                        <div class="contact-icon contact-cell"><span class="icon-phone"></span></div>
+                        <div class="contact-text contact-cell">
+                            <span>+7 (909) 404 27 83</span><br />
+                            <span>+7 (3452) 83 27 83</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-logo header-item">
+                    <div class="padding-05em">
+                        <a href="{% url 'home' %}"><img src="{% static 'page/images/logo.png' %}" alt="" /></a>
+                    </div>
+                </div>
+                <div class="header-order-call header-item">
+                    <div class="padding-05em block-order-call">
+                        <div>Мы всегда на связи с Вами!</div>
+                        <div><a href="/" class="button-red">Заказать звонок</a></div>
+                        <div class="block-socnet">
+                            Подписывайтесь: <a href="/"><span class="icon-vkontakte"></span></a><a href="/"><span  class="icon-odnoklassniki"></span></a>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+
+            <nav class="main-menu">
+                <div class="main-menu-icon js-main-menu-icon"><span></span></div>
+                
+            </nav>
+
+        </header>
+
+        <main class="content site-item">
+            <div class="container">
+                <div class="main-container">
+                    <section class="main-column">
+                        <div class="padding-05em">
+                            <h1>Наши услуги</h1>
+                            <div class="block-service">
+                                <div class="service-item one-row">
+                                    <div class="service-image" style="background: url('{% static 'page/images/usluga-1.jpg' %}') no-repeat center center; background-size: cover;">
+                                        <img src="{% static 'page/images/usluga-none.png' %}" />
+                                        <div class="service-title">Туры для школьников</div>
+                                        <div class="service-price">от 700 руб.</div>                                                                    
+                                    </div>
+                                </div>
+                                <div class="service-item one-row">
+                                    <div class="service-image" style="background: url('{% static 'page/images/usluga-2.jpg' %}') no-repeat center center; background-size: cover;">
+                                        <div class="service-title">Автобусные туры</div>
+                                        <div class="service-price">от 700 руб.</div>                                                                    
+                                    </div>                                    
+                                </div>
+                                <div class="service-item one-row">
+                                    <div class="service-image" style="background: url('{% static 'page/images/usluga-3.jpg' %}') no-repeat center center; background-size: cover;">
+                                        <div class="service-title">Выходные туры</div>
+                                        <div class="service-price">от 700 руб.</div>                                                                    
+                                    </div>                                    
+                                </div>
+                                <div class="service-item one-row">
+                                    <div class="service-image" style="background: url('{% static 'page/images/usluga-5.jpg' %}') no-repeat center center; background-size: cover;">
+                                        <div class="service-title">Морские туры</div>
+                                        <div class="service-price">от 700 руб.</div>                                                                    
+                                    </div>                                    
+                                </div>
+                                <div class="service-item one-row">
+                                    <div class="service-image" style="background: url('{% static 'page/images/usluga-6.jpg' %}') no-repeat center center; background-size: cover;">
+                                        <div class="service-title">Потарочный сертификат</div>
+                                        <div class="service-price">от 700 руб.</div>                                                                    
+                                    </div>                                    
+                                </div>
+                                <div class="service-item one-row">
+                                    <div class="service-image" style="background: url('{% static 'page/images/usluga-7.jpg' %}') no-repeat center center; background-size: cover;">
+                                        <div class="service-title">Туты в рассрочку</div>
+                                        <div class="service-price">от 700 руб.</div>                                                                    
+                                    </div>                                    
+                                </div>
+                                <div class="service-item tow-row">
+                                    <div class="service-image" style="background: url('{% static 'page/images/usluga-4.jpg' %}') no-repeat center center; background-size: cover;">
+                                        <div class="service-title">Романтические встречи</div>
+                                        <div class="service-price">от 700 руб.</div>
+                                        <div class="service-stiker-new">
+                                            <img src="{% static 'page/images/stiker-new.png' %}" />
+                                        </div>                                                               
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block-tour-operator">
+                            <h1>Туроператоры</h1>
+                            <div class="js-carousel-tour-operator carousel-tour-operator">
+                                <ul class="tour-operator">
+                                    <li class="operator-item"><div class="operator-logo"><img src="{% static 'page/images/frame.png' %}" alt=""></div></li>
+                                    <li class="operator-item"><div class="operator-logo"><img src="{% static 'page/images/frame-1.png' %}" alt=""></div></li>
+                                    <li class="operator-item"><div class="operator-logo"><img src="{% static 'page/images/frame-2.png' %}" alt=""></div></li>
+                                    <li class="operator-item"><div class="operator-logo"><img src="{% static 'page/images/frame-3.png' %}" alt=""></div></li>
+                                    <li class="operator-item"><div class="operator-logo"><img src="{% static 'page/images/frame-4.png' %}" alt=""></div></li>
+                                    <li class="operator-item"><div class="operator-logo"><img src="{% static 'page/images/frame-5.png' %}" alt=""></div></li>
+                                </ul>
+                                <!-- a href="#" class="js-carousel-prev carousel-prev">&lsaquo;</a>
+                                <a href="#" class="js-carousel-next carousel-next">&rsaquo;</a -->
+                            </div>
+                        </div>
+
+                        <div class="block-slogan-director margin-top-1em">
+                            <div class="block-slogan-director-content">
+                            <h1>Обращение руководителя</h1>
+                            <div class="slogan-container">
+                                <div class="slogan-foto slogan-item">
+                                    <img src="{% static 'page/images/director.png' %}" alt="" />
+                                </div>
+                                <div class="slogan-text slogan-item">
+                                    Запланированный отпуск ждал нас в Турции. Но наша любимая компания  в лице менеждера Яночки предложили нам отличную замену. Немного сомневались,стоит ли с детьми ехать в другую страну, в Турции все было уже родное. Но муж взял на себя всю ответсвенность и вот мы в Ларнаке. Очень миленько. Возможно даже вернемся.
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                    </section>
+
+                    <aside class="side-column">
+                        <div class="padding-05em">
+                            <div class="block-tour">
+                                <h1>Горящие туры</h1>
+                                <div class="tour-item">
+                                    <div class="padding-05em">
+                                        <div class="tour-image"><img src="{% static 'page/images/tour-1.png' %}" /></div>
+                                        <div class="tour-title">Турция</div>
+                                        <div class="tour-star"><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /></div>
+                                        <div class="tour-description">Все включено, 14 ночей</div>
+                                        <div class="tour-price"><span>55 000 руб.</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="tour-item">
+                                    <div class="padding-05em">
+                                        <div class="tour-image"><img src="{% static 'page/images/tour-2.png' %}" /></div>
+                                        <div class="tour-title">Тунис</div>
+                                        <div class="tour-star"><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /></div>
+                                        <div class="tour-description">Все включено, 7 ночей</div>
+                                        <div class="tour-price"><span>55 000 руб.</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="tour-item">
+                                    <div class="padding-05em">
+                                        <div class="tour-image"><img src="{% static 'page/images/tour-3.png' %}" /></div>
+                                        <div class="tour-title">Акапулько</div>
+                                        <div class="tour-star"><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /></div>
+                                        <div class="tour-description">Все включено, 21 ночей</div>
+                                        <div class="tour-price"><span>55 000 руб.</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+        
+        <div class="block-reviews">
+            <div class="container">
+                <div class="padding-05em">
+                    <h1>отзывы</h1>
+                    <div class="carousel-review-container">
+                        <div class="review-container">
+                            <div class="review-item">
+                                <div class="padding-05em">
+                                    <div class="review-content">
+                                        <div class="review-date">23.08.2022</div>
+                                        <div class="review-fio">Иванов Иван Иванович</div>
+                                        <hr />
+                                        <div class="review-description">
+                                            Запланированный отпуск ждал нас в Турции. Но наша любимая компания Дан в лице менеждера Яночки предложили нам отличную замену. Немного сомневались,стоит ли с детьми ехать в другую страну, в Турции все было уже родное. Но муж взял на себя всю ответсвенность и вот мы в Ларнаке. Очень миленько. Возможно даже вернемся.                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-item">
+                                <div class="padding-05em">
+                                    <div class="review-content">
+                                        <div class="review-date">23.08.2022</div>
+                                        <div class="review-fio">Иванов Иван Иванович</div>
+                                        <hr />
+                                        <div class="review-description">
+                                            Запланированный отпуск ждал нас в Турции. Но наша любимая компания Дан в лице менеждера Яночки предложили нам отличную замену. Немного сомневались,стоит ли с детьми ехать в другую страну, в Турции все было уже родное. Но муж взял на себя всю ответсвенность и вот мы в Ларнаке. Очень миленько. Возможно даже вернемся.                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-item">
+                                <div class="padding-05em">
+                                    <div class="review-content">
+                                        <div class="review-date">23.08.2022</div>
+                                        <div class="review-fio">Иванов Иван Иванович</div>
+                                        <hr />
+                                        <div class="review-description">
+                                            Запланированный отпуск ждал нас в Турции. Но наша любимая компания Дан в лице менеждера Яночки предложили нам отличную замену. Немного сомневались,стоит ли с детьми ехать в другую страну, в Турции все было уже родное. Но муж взял на себя всю ответсвенность и вот мы в Ларнаке. Очень миленько. Возможно даже вернемся.                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review-item">
+                                <div class="padding-05em">
+                                    <div class="review-content">
+                                        <div class="review-date">23.08.2022</div>
+                                        <div class="review-fio">Иванов Иван Иванович</div>
+                                        <hr />
+                                        <div class="review-description">
+                                            Запланированный отпуск ждал нас в Турции. Но наша любимая компания Дан в лице менеждера Яночки предложили нам отличную замену. Немного сомневались,стоит ли с детьми ехать в другую страну, в Турции все было уже родное. Но муж взял на себя всю ответсвенность и вот мы в Ларнаке. Очень миленько. Возможно даже вернемся.                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <footer class="footer site-item">
+            <div class="container footer-container">
+                <div class="footer-logo footer-item">
+                    <div class="padding-05em">
+                        <a href="{% url 'home' %}"><img src="{% static 'page/images/logo-footer.png' %}" alt="" /></a>
+                        <div class="block-socnet">
+                            Подписывайтесь: <a href="/"><span class="icon-vkontakte"></span></a><a href="/"><span  class="icon-odnoklassniki"></span></a>
+                        </div>                    
+                    </div>
+                </div>
+                <div class="footer-main-menu footer-item">
+                    
+                </div>
+
+                <div class="footer-contact footer-item">
+                    <div class="padding-05em block-contact">
+                        <div class="contact-icon contact-cell"><span class="icon-location"></span></div>
+                        <div class="contact-text contact-cell">г. Тюмень, ул. Свободы, 83</div>
+                        <div class="contact-icon contact-cell"><span class="icon-phone"></span></div>
+                        <div class="contact-text contact-cell">
+                            <span>+7 (909) 404 27 83</span><br />
+                            <span>+7 (3452) 83 27 83</span>
+                        </div>
+                    </div>  
+                    <div><a href="/" class="button-red">Заказать звонок</a></div>                  
+                </div>
+            </div>
+        </footer>
+    </div>  
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function(){    
+                
+            });
+        }(jQuery));
+    </script>
+</body>
+</html>

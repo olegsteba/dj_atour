@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'page/fonts/stylesheet.css'%}">
     <link rel="stylesheet" href="{% static 'page/css/style.css'%}">
     <link rel="stylesheet" href="{% static 'page/css/fontello.css'%}">
+    {% block css_additional %}{% endblock %}
     <script type="text/javascript" src="{% static 'page/js/jquery-3.6.0.js'%}"></script>
     <script type="text/javascript" src="{% static 'page/js/main.js'%}"></script>
 </head>
@@ -47,7 +48,7 @@
 
             <nav class="main-menu">
                 <div class="main-menu-icon js-main-menu-icon"><span></span></div>
-                
+                {% include 'menu/includes/mainmenu.html' %}
             </nav>
 
         </header>
@@ -251,7 +252,9 @@
                     </div>
                 </div>
                 <div class="footer-main-menu footer-item">
-                    
+                    <div class="padding-05em">
+                        {% include 'menu/includes/mainmenu.html' %} 
+                    </div>   
                 </div>
 
                 <div class="footer-contact footer-item">

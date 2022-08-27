@@ -1,3 +1,34 @@
 from django.db import models
+from django.urls import reverse
 
-# Create your models here.
+
+class Page(models.Model):
+    title = models.CharField(
+        verbose_name='Заголовок',
+        max_length=255,
+    )
+
+    slug = models.SlugField(
+        verbose_name='Slug страницы',
+        max_length=255,
+        unique=True, 
+        db_index=True,
+    )
+        
+    body = models.TextField(verbose_name='Описание')
+    
+    datetime_create = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+    
+    datetime_update = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
+    
+    is_published = models.BooleanField(default=True, verbose_name='Опубликовано')
+    
+    class Meta:
+        verbose_name='Страница'
+        verbose_name_plural='Страницы'
+        
+    def __str__(self):
+        return f"{self.title}"    
+
+    def get_absolute_url(self):
+        return reverse('page', kwargs={"page_slug": self.slug})

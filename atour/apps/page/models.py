@@ -1,5 +1,8 @@
+from distutils.command.build import build
 from django.db import models
 from django.urls import reverse
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Page(models.Model):
@@ -15,7 +18,7 @@ class Page(models.Model):
         db_index=True,
     )
         
-    body = models.TextField(verbose_name='Описание')
+    body = RichTextUploadingField(verbose_name='Описание', blank=True, null=True)
     
     datetime_create = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     

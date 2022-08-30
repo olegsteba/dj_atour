@@ -3,7 +3,7 @@ from apps.page.models import Page
 
 class PageAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'title', 'slug', 'body',
+        'id', 'title', 'slug',
         'datetime_create', 'datetime_update', 'is_published',
     )
     

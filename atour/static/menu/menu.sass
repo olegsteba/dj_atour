@@ -1,0 +1,80 @@
+/* Стили для главного меню сайта*/
+nav
+	ul.main-menu-list
+		position: relative
+		margin: 0
+		padding: 0
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		flex: 0 0 auto
+		justify-content: center
+		list-style: none
+		li
+			margin: 0
+			padding: 0
+			a
+				margin: 0
+				padding: 0.4em 0.7em 0.2em 0.7em
+				text-decoration: none
+				color: #FFFFFF
+				display: inline-block
+				text-align: center
+				text-transform: uppercase
+				border-bottom: 0.1em solid transparent
+				&:hover
+					border-bottom: 0.1em solid #FFFFFF
+					border-radius: 0.5em
+					background: #FFFFFF
+					color: #668097					
+.footer-main-menu
+	ul.main-menu-list
+		position: relative
+		margin: 0
+		padding: 0
+		display: flex
+		flex-direction: column
+		flex-wrap: wrap
+		flex: 0 0 auto
+		justify-content: center
+		list-style: none
+		li	
+			margin: 0
+			padding: 0
+/* Стили для разных разрешений */
+@media screen and (min-width: 0px) and (max-width: 1280px)
+	body
+
+
+@media screen and (min-width: 0px) and (max-width: 1024px)
+	body
+
+
+@media screen and (min-width: 0px) and (max-width: 768px)
+	body
+
+
+@media screen and (min-width: 0px) and (max-width: 600px)
+	body
+	nav
+		ul.main-menu-list
+			margin-top: -100%
+			flex-direction: column
+			transition: all 0.3s ease 0s
+			&.active
+				margin-top: 0%
+			li
+				margin: 0 auto
+		.main-menu-icon
+			display: block
+
+
+@media screen and (min-width: 0px) and (max-width: 480px)
+	body
+
+	
+@media screen and (min-width: 0px) and (max-width: 320px)
+	body
+
+
+

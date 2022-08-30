@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Подключение CKEditor
+    'ckeditor',    
+    'ckeditor_uploader',
     #Подключение своих пакетов
     'apps.menu.apps.MenuConfig',
     'apps.page.apps.PageConfig',
@@ -91,7 +94,6 @@ DATABASES = {
 }
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -125,17 +127,61 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
+############################ Static Files' Settings ###########################
 STATIC_URL = 'static/'
 
-STATIC_ROOT = BASE_DIR / 'static/'
+#STATIC_ROOT = BASE_DIR / 'static/'
 
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [BASE_DIR / 'static/']
 
+
+############################ Media Files' Settings ############################
 MEDIA_ROOT = BASE_DIR / 'media/'
 
 MEDIA_URL = 'media/'
 
+
+############################## CKEditor Settings ##############################
+#CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            [
+                'Source',
+                '-','Undo', 'Redo',
+                '-', 'Bold', 'Italic', 'Underline',
+                '-', 'Link', 'Unlink', 'Anchor',
+                'Format',
+                '-', 'Maximize',
+                '-', 'Table',
+                '-', 'Image',
+                '-', 'NumberedList', 'BulletedList'
+            ],
+            [
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
+                '-', 'Outdent', 'Indent',
+                '-', 'HorizontalRule',
+                '-', 'Blockquote'
+            ]
+        ],
+        'language': 'ru',
+        'height': 500,
+        'width': '100%',
+        'toolbarCanCollapse': False,
+        'forcePasteAsPlainText': True
+    }
+}
+
+#CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
+
+CKEDITOR_RESTRICT_BY_USER = False
+
+CKEDITOR_BROWSE_SHOW_DIRS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

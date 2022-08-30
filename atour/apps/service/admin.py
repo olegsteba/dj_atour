@@ -1,10 +1,12 @@
 from django.contrib import admin
-from apps.page.models import Page
+from apps.service.models import Service
 
-class PageAdmin(admin.ModelAdmin):
+
+class ServiceAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'title', 'slug',
-        'datetime_create', 'datetime_update', 'is_published',
+        'id', 'title', 'slug', 'price',
+        'datetime_create', 'datetime_update', 
+        'in_two_rows', 'is_published',
     )
     
     list_display_links = (
@@ -16,23 +18,19 @@ class PageAdmin(admin.ModelAdmin):
     )
     
     list_editable = (
-        'is_published',
-    )
-    
-    list_filter = (
-        'is_published',
+        'in_two_rows', 'is_published',
     )
     
     fieldsets = (
         (None, {
             'fields': (
-                'title', 'slug', 'body', 'is_published',
+                'title', 'slug', 'image', 'price',
+                'body', 'in_two_rows', 'is_published',
             )
         }),
     )
-    
+
     prepopulated_fields = {'slug': ('title',)} #Автоматическое заполнение поля слаг
 
 #Регистрация моделей в админ-панеле
-admin.site.register(Page, PageAdmin)
-
+admin.site.register(Service, ServiceAdmin)

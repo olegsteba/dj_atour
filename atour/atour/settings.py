@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     #Подключение своих пакетов
     'apps.menu.apps.MenuConfig',
     'apps.page.apps.PageConfig',
+    'apps.service.apps.ServiceConfig',
+    'apps.tour.apps.TourConfig',
+    'apps.photogallery.apps.PhotogalleryConfig',
 ]
 
 MIDDLEWARE = [

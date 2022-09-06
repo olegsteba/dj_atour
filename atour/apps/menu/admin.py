@@ -8,8 +8,11 @@ class MenuItemInline(admin.TabularInline):
 
 
 class MenuAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug',]
-    inlines = [MenuItemInline,]
+    list_display = (
+        'name', 'slug',
+    )
+    
+    inlines = (MenuItemInline,)
 
 
 admin.site.register(Menu, MenuAdmin)

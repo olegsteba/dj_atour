@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'photogallery/css/photogallery.css'%}">
+{% endblock %}
+
+{% block content %}
+    <div class="padding-05em">
+        <h1>{{ title }}</h1>
+        <div class="block-photogallery">
+        {% for album in albums %}
+            <div class="album-item">
+                {% if album.album_photos.all.0 %}
+                    <div class="album-image"><img src="{{ album.album_photos.all.0.image.url }}" /></div>
+                {% endif %}                
+                <div class="album-title">{{ album.title }}</div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock%}

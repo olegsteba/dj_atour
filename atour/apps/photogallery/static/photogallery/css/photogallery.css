@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* Стили для фотогалереи меню сайта*/
+.block-photogallery {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.7em;
+}
+
+/* Стили для разных разрешений */

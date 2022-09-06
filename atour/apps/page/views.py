@@ -1,7 +1,6 @@
-from msilib.schema import ListView
-from django.shortcuts import render
+#from msilib.schema import ListView
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import DetailView
+from django.views.generic import ListView, DetailView
 from apps.page.models import Page
 
 

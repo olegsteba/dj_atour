@@ -56,8 +56,6 @@ class Photo(models.Model):
     
     image = models.ImageField(
         upload_to=upload_album_image,
-        null=True,
-        blank=True,
         verbose_name='Изображение'
     )
     

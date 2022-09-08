@@ -10,4 +10,48 @@
   grid-gap: 0.7em;
 }
 
+.block-photogallery .album-item {
+  margin: 0;
+  padding: 0;
+}
+
+.block-photogallery .album-item .album-container {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.block-photogallery .album-item .album-container:hover {
+  border: 0.1em solid #CB1A33;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.block-photogallery .album-item .album-container .album-image img {
+  margin: 0;
+  padding: 0;
+  border-radius: 0.3em;
+  display: block;
+}
+
+.block-photogallery .album-item .album-container .album-title {
+  margin: 0;
+  padding: 2%;
+  position: absolute;
+  bottom: 2em;
+  background: #ED3237;
+  width: 96%;
+  height: 2.8em;
+  color: #FFFFFF;
+  overflow: hidden;
+  text-transform: uppercase;
+  opacity: 0.8;
+  text-align: center;
+}
+
 /* Стили для разных разрешений */

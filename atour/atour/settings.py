@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Миниатюры в шаблонах
+    'sorl.thumbnail',
     #Подключение CKEditor
     'ckeditor',    
     'ckeditor_uploader',

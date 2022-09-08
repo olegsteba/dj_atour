@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
+{% load thumbnail %}
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +16,7 @@
     {% block css_additional %}{% endblock %}
     <script type="text/javascript" src="{% static 'page/js/jquery-3.6.0.js'%}"></script>
     <script type="text/javascript" src="{% static 'page/js/main.js'%}"></script>
+    {% block js_additional %}{% endblock %}
 </head>
 <body>
     <script type="text/javascript"></script>
@@ -85,7 +88,7 @@
                                     </div>
                                 </div>
 
-                                <div class="tour-item">
+                                <!-- div class="tour-item">
                                     <div class="padding-05em">
                                         <div class="tour-image"><img src="{% static 'page/images/tour-3.png' %}" /></div>
                                         <div class="tour-title">Акапулько</div>
@@ -93,7 +96,7 @@
                                         <div class="tour-description">Все включено, 21 ночей</div>
                                         <div class="tour-price"><span>55 000 руб.</span></div>
                                     </div>
-                                </div>
+                                </div -->
                             </div>
                         </div>
                     </aside>

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load thumbnail %}
 
 {% block css_additional %}
     <link rel="stylesheet" href="{% static 'photogallery/css/photogallery.css'%}">
@@ -11,10 +12,16 @@
         <div class="block-photogallery">
         {% for album in albums %}
             <div class="album-item">
-                {% if album.album_photos.all.0 %}
-                    <div class="album-image"><img src="{{ album.album_photos.all.0.image.url }}" /></div>
-                {% endif %}                
-                <div class="album-title">{{ album.title }}</div>
+                <div class="album-container" onclick="location.href='{{ album.get_absolute_url }}';">
+                    {% if album.album_photos.all.0 %}
+                        <div class="album-image">
+                            {% thumbnail album.album_photos.all.0.image "300x250" crop="center" as img %}
+                                <img src="{{ img.url }}" />
+                            {% endthumbnail %}
+                        </div>
+                    {% endif %}                
+                    <div class="album-title">{{ album.title }}</div>
+                </div>  
             </div>
         {% endfor %}
         </div>

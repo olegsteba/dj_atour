@@ -762,6 +762,63 @@ main.content .main-container .side-column {
   background: #FFFFFF;
 }
 
+/* Стили для постраничной навигации */
+div.pagination {
+  margin: 1em 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.pagination ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+div.pagination ul li {
+  margin: 0;
+  padding: 0 0.5em;
+  float: left;
+}
+
+div.pagination ul li span {
+  display: block;
+  border-radius: 0.2em;
+  padding: 0.25em 0.65em;
+  font-weight: bold;
+  background: #099741;
+  -webkit-box-shadow: 0 0 0.1em 0em #099741;
+          box-shadow: 0 0 0.1em 0em #099741;
+  color: #ffffff;
+}
+
+div.pagination ul li a {
+  display: block;
+  border-radius: 0.2em;
+  padding: 0.25em 0.65em;
+  color: #CB1A33;
+  -webkit-box-shadow: 0 0 0.1em 0em #CB1A33;
+          box-shadow: 0 0 0.1em 0em #CB1A33;
+  background-repeat: no-repeat;
+  background-size: 1em 1em;
+  background-position: 0.5em center;
+}
+
+div.pagination ul li a:hover {
+  background: #CB1A33;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+div.pagination ul::after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
 /* Стили для разных разрешений */
 @media screen and (min-width: 0px) and (max-width: 768px) {
   #site-wrapper {

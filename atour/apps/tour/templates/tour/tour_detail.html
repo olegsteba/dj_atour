@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'tour/css/tour.css'%}">
+{% endblock %}
+
+{% block content %}
+    <div class="padding-05em">
+        <h1>{{ tour.title }}</h1>
+        <div class="tour-detail">
+            {% if tour.image %}
+            <div class="tour-image">
+                {% thumbnail tour.image "350x300" crop="center" as img %}
+                    <img src="{{ img.url }}" />
+                {% endthumbnail %}
+            </div>
+            {% endif %}                             
+            <div class="service-price"><strong>Стоимость:</strong> {{ tour.price|floatformat:"g" }} руб.</div>  
+            <div class="service-body">{% autoescape off %}{{ tour.body }}{% endautoescape %}</div>
+        </div>
+    </div>
+{% endblock%}

@@ -66,7 +66,7 @@ class Tour(models.Model):
         return f"{self.title}"    
 
     def get_absolute_url(self):
-        return reverse('tour', kwargs={"tour_slug": self.slug})
+        return reverse('tour_detail', kwargs={"tour_slug": self.slug})
     
     class Meta:
         verbose_name='Тур'

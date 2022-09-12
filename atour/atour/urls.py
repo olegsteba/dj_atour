@@ -27,6 +27,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('photogallery/', include('apps.photogallery.urls')),
     path('service/', include('apps.service.urls')),
+    path('last-tour/', include('apps.tour.urls')),
     path('', include('apps.page.urls')),
 ]
 

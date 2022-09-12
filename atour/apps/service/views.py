@@ -1,6 +1,3 @@
-from unicodedata import category
-from django.db.models import Count
-from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from apps.service.models import Service, Category
 from apps.service.utils import DataMixin

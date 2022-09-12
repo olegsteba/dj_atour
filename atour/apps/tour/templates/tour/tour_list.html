@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'tour/css/tour.css'%}">
+{% endblock %}
+
+{% block content %}
+    <div class="padding-05em">
+        <h1>{{ title }}</h1>
+        <div class="block-tours">
+        {% for tour in tours %}
+            <div class="tour-item">
+                <div class="tour-container" onclick="location.href='{{ tour.get_absolute_url }}';">   
+                    {% if tour.image %}
+                        <div class="tour-image">
+                            {% thumbnail tour.image "350x300" crop="center" as img %}
+                                <img src="{{ img.url }}" />
+                            {% endthumbnail %}
+                        </div>
+                    {% endif %}                             
+                    <div class="tour-title">{{ tour.title }}</div>
+                    <div class="tour-price">{{ tour.price|floatformat:"g" }} руб.</div>
+                    
+                </div>  
+            </div>
+        {% endfor %}
+        </div>
+
+        {% if page_obj.has_other_pages %}
+        <div class="pagination">
+            <ul>
+                {% if page_obj.has_previous %}
+                <li class="page-num">
+                    <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+                </li>
+                {% endif %}
+                {% for p in paginator.page_range %}
+                <li class="page-num">
+                    {% if page_obj.number == p %}
+                        <span>{{ p }}</span>
+                    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                        <a href="?page={{ p }}">{{ p }}</a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <li class="page-num">
+                    <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+                </li>
+                {% endif %}            
+            </ul>
+        </div>
+        {% endif %}
+                
+    </div>
+{% endblock%}

@@ -55,3 +55,16 @@
 }
 
 /* Стили для разных разрешений */
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .block-photogallery {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .block-photogallery {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,21 @@
+{% load static %}
+{% load thumbnail %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'service/css/service.css'%}">
+{% endblock %}
+
+{% if categories %}
+<div class="padding-05em">
+    <h1>Наши услуги</h1>
+    <div class="block-services-grid">
+    {% for category in categories %}
+        <div class="service-item {% if category.in_two_rows %} tow-row {% else %} one-row {% endif %}"  onclick="location.href='{{ category.get_absolute_url }}';">
+            <div class="service-image" style="background: url('{{ category.image.url }}') no-repeat center center; background-size: cover;">
+                <img src="{% static 'page/images/usluga-none.png' %}" />
+                <div class="service-title">{{ category.name }}</div>                                                                    
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}

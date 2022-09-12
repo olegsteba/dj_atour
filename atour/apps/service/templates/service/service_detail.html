@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'service/css/service.css'%}">
+{% endblock %}
+
+{% block content %}
+    <div class="padding-05em">
+        <h1>{{ service.title }}</h1>
+        <div class="service-detail">
+            {% if service.image %}
+            <div class="servcie-image">
+                {% thumbnail service.image "350x300" crop="center" as img %}
+                    <img src="{{ img.url }}" />
+                {% endthumbnail %}
+            </div>
+            {% endif %}                             
+            <div class="service-category"><strong>Раздел:</strong> {{ service.category }}</div>
+            <div class="service-price"><strong>Стоимость:</strong> {{ service.price|floatformat:"g" }} руб.</div>  
+            <div class="service-body">{% autoescape off %}{{ service.body }}{% endautoescape %}</div>
+        </div>
+    </div>
+{% endblock%}

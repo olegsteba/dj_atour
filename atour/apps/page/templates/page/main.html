@@ -1,62 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load categories %}
 
 {% block css_additional %}
 {% endblock %}
 
 {% block content %}
 
-<div class="padding-05em">
-    <h1>Наши услуги</h1>
-    <div class="block-service">
-        <div class="service-item one-row">
-            <div class="service-image" style="background: url('{% static 'page/images/usluga-1.jpg' %}') no-repeat center center; background-size: cover;">
-                <img src="{% static 'page/images/usluga-none.png' %}" />
-                <div class="service-title">Туры для школьников</div>
-                <div class="service-price">от 700 руб.</div>                                                                    
-            </div>
-        </div>
-        <div class="service-item one-row">
-            <div class="service-image" style="background: url('{% static 'page/images/usluga-2.jpg' %}') no-repeat center center; background-size: cover;">
-                <div class="service-title">Автобусные туры</div>
-                <div class="service-price">от 700 руб.</div>                                                                    
-            </div>                                    
-        </div>
-        <div class="service-item one-row">
-            <div class="service-image" style="background: url('{% static 'page/images/usluga-3.jpg' %}') no-repeat center center; background-size: cover;">
-                <div class="service-title">Выходные туры</div>
-                <div class="service-price">от 700 руб.</div>                                                                    
-            </div>                                    
-        </div>
-        <div class="service-item one-row">
-            <div class="service-image" style="background: url('{% static 'page/images/usluga-5.jpg' %}') no-repeat center center; background-size: cover;">
-                <div class="service-title">Морские туры</div>
-                <div class="service-price">от 700 руб.</div>                                                                    
-            </div>                                    
-        </div>
-        <div class="service-item one-row">
-            <div class="service-image" style="background: url('{% static 'page/images/usluga-6.jpg' %}') no-repeat center center; background-size: cover;">
-                <div class="service-title">Потарочный сертификат</div>
-                <div class="service-price">от 700 руб.</div>                                                                    
-            </div>                                    
-        </div>
-        <div class="service-item one-row">
-            <div class="service-image" style="background: url('{% static 'page/images/usluga-7.jpg' %}') no-repeat center center; background-size: cover;">
-                <div class="service-title">Туты в рассрочку</div>
-                <div class="service-price">от 700 руб.</div>                                                                    
-            </div>                                    
-        </div>
-        <div class="service-item tow-row">
-            <div class="service-image" style="background: url('{% static 'page/images/usluga-4.jpg' %}') no-repeat center center; background-size: cover;">
-                <div class="service-title">Романтические встречи</div>
-                <div class="service-price">от 700 руб.</div>
-                <div class="service-stiker-new">
-                    <img src="{% static 'page/images/stiker-new.png' %}" />
-                </div>                                                               
-            </div>                                    
-        </div>
-    </div>
-</div>
+    {% show_categories_grid %}
 
 <!-- div class="block-tour-operator">
     <h1>Туроператоры</h1>

@@ -3,24 +3,28 @@
 {% load thumbnail %}
 
 {% block css_additional %}
-    <link rel="stylesheet" href="{% static 'photogallery/css/photogallery.css'%}">
+<link rel="stylesheet" href="{% static 'service/css/service.css'%}">
 {% endblock %}
 
 {% block content %}
     <div class="padding-05em">
         <h1>{{ title }}</h1>
-        <div class="block-photogallery">
-        {% for album in albums %}
-            <div class="album-item">
-                <div class="album-container" onclick="location.href='{{ album.get_absolute_url }}';">
-                    {% if album.album_photos.all.0 %}
-                        <div class="album-image">
-                            {% thumbnail album.album_photos.all.0.image "350x300" crop="center" as img %}
+        <div class="category-body">{% autoescape off %}{{ body }}{% endautoescape %}</div>
+        <div class="block-services">
+        {% for service in services %}
+            <div class="service-item">
+                <div class="servcie-container" onclick="location.href='{{ service.get_absolute_url }}';">   
+                    {% if service.image %}
+                        <div class="servcie-image">
+                            {% thumbnail service.image "350x300" crop="center" as img %}
                                 <img src="{{ img.url }}" />
                             {% endthumbnail %}
                         </div>
-                    {% endif %}                
-                    <div class="album-title">{{ album.title }}</div>
+                    {% endif %}                             
+                    <div class="service-category">{{ service.category }}</div>
+                    <div class="service-title">{{ service.title }}</div>
+                    <div class="service-price">{{ service.price|floatformat:"g" }} руб.</div>
+                    
                 </div>  
             </div>
         {% endfor %}

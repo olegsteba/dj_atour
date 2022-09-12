@@ -62,7 +62,7 @@ class Service(models.Model):
         return f"{self.title}"    
 
     def get_absolute_url(self):
-        return reverse('service', kwargs={"service_slug": self.slug})
+        return reverse('service_detail', kwargs={"service_slug": self.slug})
     
     class Meta:
         verbose_name='Услуга'
@@ -125,7 +125,7 @@ class Category(models.Model):
         return f"{self.name}"    
 
     def get_absolute_url(self):
-        return reverse('category', kwargs={"category_slug": self.slug})  
+        return reverse('service_category', kwargs={"category_slug": self.slug})  
 
     class Meta:
         verbose_name='Категория'

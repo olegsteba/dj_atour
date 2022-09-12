@@ -22,7 +22,7 @@
                     <div class="album-container">
                         <div class="album-image">
                             <a class="js-photogallery" data-fancybox="{{ album.slug }}" data-caption="{{ album.title }}" href="{{ photo.image.url }}">
-                                {% thumbnail photo.image "300x250" crop="center" as img %}
+                                {% thumbnail photo.image "350x300" crop="center" as img %}
                                     <img src="{{ img.url }}" />
                                 {% endthumbnail %}
                             </a>

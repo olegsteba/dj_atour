@@ -9,9 +9,10 @@
 {% block content %}
     <div class="padding-05em">
         <h1>{{ title }}</h1>
-        <div class="block-tours">
+        <div class="block-tours-grid-list">
         {% for tour in tours %}
             <div class="tour-item">
+                
                 <div class="tour-container" onclick="location.href='{{ tour.get_absolute_url }}';">   
                     {% if tour.image %}
                         <div class="tour-image">
@@ -19,11 +20,34 @@
                                 <img src="{{ img.url }}" />
                             {% endthumbnail %}
                         </div>
-                    {% endif %}                             
-                    <div class="tour-title">{{ tour.title }}</div>
-                    <div class="tour-price">{{ tour.price|floatformat:"g" }} руб.</div>
+                    {% endif %}  
+
+                    <div class="tour-description">
+                        <div class="tour-title">{{ tour.title }}</div>
+                        <div class="tour-star">
+                            {% for _ in '_'|rjust:tour.star %}
+                                <img src="{% static 'tour/images/icon-star.png' %}" />
+                            {% endfor %}
+                        </div>
+                        <div class="tour-short-description">
+                            <div class="short-icon"><img src="{% static 'tour/images/icon-car.png' %}" /></div><div class="short-desc">Парковка</div>
+                            <div class="short-icon"><img src="{% static 'tour/images/icon-beach.png' %}" /></div><div class="short-desc">Оборудованный пляж</div>
+                            <div class="short-icon"><img src="{% static 'tour/images/icon-open-swim.png' %}" /></div><div class="short-desc">Открытый басеин</div>
+                            <div class="short-icon"><img src="{% static 'tour/images/icon-swim.png' %}" /></div><div class="short-desc">Закрытый басеин</div>
+                            <div class="short-icon"><img src="{% static 'tour/images/icon-spa.png' %}" /></div><div class="short-desc">СПА салон</div>
+                        </div>
+                    </div>                        
                     
+                    <div class="tour-cost-order">
+                        <div class="tour-price">
+                            {{ tour.price|floatformat:"g" }} руб.
+                        </div>
+                        <div class="tour-order">
+                            <a href="/" class="button-red">Забронировать</a>
+                        </div>
+                    </div>    
                 </div>  
+
             </div>
         {% endfor %}
         </div>

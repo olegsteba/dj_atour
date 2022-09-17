@@ -10,6 +10,7 @@
     <div class="padding-05em">
         <h1>{{ tour.title }}</h1>
         <div class="tour-detail">
+
             {% if tour.image %}
             <div class="tour-image">
                 {% thumbnail tour.image "350x300" crop="center" as img %}
@@ -17,8 +18,22 @@
                 {% endthumbnail %}
             </div>
             {% endif %}                             
+            
+            <div class="tour-star">
+                {% for _ in '_'|rjust:tour.star %}
+                    <img src="{% static 'tour/images/icon-star.png' %}" />
+                {% endfor %}
+            </div>
+            <div class="tour-short-description">
+                <div class="short-icon"><img src="{% static 'tour/images/icon-car.png' %}" /></div><div class="short-desc">Парковка</div>
+                <div class="short-icon"><img src="{% static 'tour/images/icon-beach.png' %}" /></div><div class="short-desc">Оборудованный пляж</div>
+                <div class="short-icon"><img src="{% static 'tour/images/icon-open-swim.png' %}" /></div><div class="short-desc">Открытый басеин</div>
+                <div class="short-icon"><img src="{% static 'tour/images/icon-swim.png' %}" /></div><div class="short-desc">Закрытый басеин</div>
+                <div class="short-icon"><img src="{% static 'tour/images/icon-spa.png' %}" /></div><div class="short-desc">СПА салон</div>
+            </div>
+
             <div class="service-price"><strong>Стоимость:</strong> {{ tour.price|floatformat:"g" }} руб.</div>  
             <div class="service-body">{% autoescape off %}{{ tour.body }}{% endautoescape %}</div>
         </div>
     </div>
-{% endblock%}
+{% endblock %}

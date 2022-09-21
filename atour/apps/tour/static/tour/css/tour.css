@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* Стили для стиска туров */
 /* Стили для блока горящие туры */
 .tour-item {
   position: relative;
@@ -77,6 +76,7 @@
   border: 0.1em solid #FFFFFF;
 }
 
+/* Стили для стиска туров */
 .block-tours-grid-list {
   margin: 0;
   padding: 0;
@@ -166,6 +166,63 @@
   padding: 0;
   font-weight: bold;
   font-size: 1.4em;
+}
+
+/* Стили для страницы тур детальный вывод */
+.tour-detail {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 35% 1fr;
+      grid-template-columns: 35% 1fr;
+  grid-gap: 0.7em;
+}
+
+.tour-detail .tour-image {
+  margin: 0;
+  pargin: 0 0.5em 0.5em 0;
+}
+
+.tour-detail .tour-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.tour-detail .tour-short-desc-order {
+  margin: 0;
+  padding: 0;
+}
+
+.tour-detail .tour-short-desc-order .tour-short-description {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2em auto;
+      grid-template-columns: 2em auto;
+  grid-gap: 0;
+}
+
+.tour-detail .tour-short-desc-order .tour-short-description .short-icon {
+  margin: 0;
+  padding: 0.25em;
+}
+
+.tour-detail .tour-short-desc-order .tour-short-description .short-desc {
+  margin: 0;
+  padding: 0.25em;
+}
+
+.tour-detail .tour-body {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
 }
 
 /* Стили для разных разрешений */

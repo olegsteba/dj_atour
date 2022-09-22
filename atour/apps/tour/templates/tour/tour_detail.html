@@ -18,7 +18,7 @@
                 {% endthumbnail %}
             </div>
             {% endif %}                             
-            <div class="tour-short-desc-order">
+            <div class="tour-short-desc">
                 <div class="tour-star">
                     {% for _ in '_'|rjust:tour.star %}
                         <img src="{% static 'tour/images/icon-star.png' %}" />
@@ -31,9 +31,15 @@
                     <div class="short-icon"><img src="{% static 'tour/images/icon-swim.png' %}" /></div><div class="short-desc">Закрытый басеин</div>
                     <div class="short-icon"><img src="{% static 'tour/images/icon-spa.png' %}" /></div><div class="short-desc">СПА салон</div>
                 </div>
-
-                <div class="service-price"><strong>Стоимость:</strong> {{ tour.price|floatformat:"g" }} руб.</div>  
             </div>
+            <div class="tour-cost-order">
+                <div class="tour-price">
+                    {{ tour.price|floatformat:"g" }} руб.
+                </div>
+                <div class="tour-order">
+                    <a href="/" class="button-red">Забронировать</a>
+                </div>
+            </div>             
             <div class="tour-body">{% autoescape off %}{{ tour.body }}{% endautoescape %}</div>
         </div>
     </div>

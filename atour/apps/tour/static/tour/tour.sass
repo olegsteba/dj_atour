@@ -114,12 +114,13 @@
 .tour-detail
 	margin: 0
 	padding: 0
-	display: grid
-	grid-template-columns: 35% 1fr
-	grid-gap: 0.7em
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
 	.tour-image
 		margin: 0
-		pargin: 0 0.5em 0.5em 0		
+		padding: 0 1%
+		flex: 0 0 31.333%
 		img
 			width: 100%
 			height: auto
@@ -127,9 +128,10 @@
 			border-radius: 0.3em		
 			border: 0.1em solid #FFFFFF
 			box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset				
-	.tour-short-desc-order
+	.tour-short-desc
 		margin: 0
-		padding: 0
+		padding: 0 1%
+		flex: 0 0 31.333%
 		.tour-short-description
 			margin: 0
 			padding: 0
@@ -142,8 +144,21 @@
 			.short-desc
 				margin: 0
 				padding: 0.25em	
+	.tour-cost-order
+		margin: 0
+		padding: 0 1%
+		flex: 0 0 31.333%
+		text-align: center
+		align-self: center		
+		.tour-price
+			margin: 0 0 1em 0
+			padding: 0
+			font-weight: bold
+			font-size: 1.4em		
 	.tour-body
-		grid-column: 1 / span 2
+		margin: 0
+		padding: 0
+		flex: 0 0 100%
 /* Стили для разных разрешений */
 @media screen and (min-width: 0px) and (max-width: 1280px)
 	body
@@ -159,7 +174,26 @@
 
 @media screen and (min-width: 0px) and (max-width: 600px)
 	body
-
+	/* Стили для стиска туров */	
+	.block-tours-grid-list
+		.tour-container
+			.tour-image
+				flex: 0 0 100%	
+			.tour-description
+				padding: 0.5em 0
+				flex: 100%
+			.tour-cost-order
+				flex: 100%	
+	/* Стили для страницы тур детальный вывод */
+	.tour-detail
+		.tour-image
+			flex: 0 0 100%		
+		.tour-short-desc
+			flex: 0 0 100%
+		.tour-cost-order
+			flex: 0 0 100%		
+		.tour-body
+			flex: 0 0 100%
 
 @media screen and (min-width: 0px) and (max-width: 480px)
 	body

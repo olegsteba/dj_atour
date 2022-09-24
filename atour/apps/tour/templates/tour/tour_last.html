@@ -1,0 +1,30 @@
+{% load static %}
+{% load thumbnail %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'tour/css/tour.css'%}">
+{% endblock %}
+
+<div class="block-tours-grid">
+    <h1>Горящие туры</h1>
+    {% for tour in tours %}
+    <div class="tour-item" onclick="location.href='{{ tour.get_absolute_url }}';">
+        {% if tour.image %}
+        <div class="tour-image">
+            {% thumbnail tour.image "350x300" crop="center" as img %}
+                <img src="{{ img.url }}" />
+            {% endthumbnail %}
+        </div>
+        {% endif %}         
+        <div class="tour-title">{{ tour.title }}</div>
+        <div class="tour-star">
+            {% for _ in '_'|rjust:tour.star %}
+                <img src="{% static 'tour/images/icon-star.png' %}" />
+            {% endfor %}
+        </div>
+        <div class="tour-price">
+            {{ tour.price|floatformat:"g" }} руб.
+        </div>
+    </div>
+    {% endfor %}
+</div>

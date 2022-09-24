@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 {% load thumbnail %}
+{% load tours %}
 
 <html lang="ru">
 <head>
@@ -66,27 +67,7 @@
 
                     <aside class="side-column">
                         <div class="padding-05em">
-                            <div class="block-tours-grid">
-                                <h1>Горящие туры</h1>
-                                <div class="tour-item">
-                                        <div class="tour-image"><img src="{% static 'page/images/tour-1.png' %}" /></div>
-                                        <div class="tour-title">Турция</div>
-                                        <div class="tour-star"><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /></div>
-                                        <div class="tour-description">Все включено, 14 ночей</div>
-                                        <div class="tour-price"><span>55 000 руб.</span></div>
-                                </div>
-
-                                <div class="tour-item">
-                                    <div class="padding-05em">
-                                        <div class="tour-image"><img src="{% static 'page/images/tour-2.png' %}" /></div>
-                                        <div class="tour-title">Тунис</div>
-                                        <div class="tour-star"><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /><img src="{% static 'page/images/star.png' %}" /></div>
-                                        <div class="tour-description">Все включено, 7 ночей</div>
-                                        <div class="tour-price"><span>55 000 руб.</span></div>
-                                    </div>
-                                </div>
-
-                            </div>
+                            {% last_tour sort='-pk' count=2 %}
                         </div>
                     </aside>
                 </div>

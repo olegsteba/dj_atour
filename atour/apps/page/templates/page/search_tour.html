@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_additional %}
+    <link href="https://www.tourtrans.ru/js/online-styles/new/modules.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        h1, h2, h3, h4, h5, h6 {
+	        color: #ED3237 !important;
+        }
+        .ttv-search button[type=submit] {
+            font-size: 1.2em !important;
+            line-height: 1em !important;
+            display: inline-block !important;
+            text-transform: uppercase !important;
+            font-weight: bold !important;
+            border-radius: 0.3em !important;
+            cursor: pointer !important;
+            color: #FFFFFF !important;
+            border: 0.1em solid #FFFFFF !important;
+            box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset  !important;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed3237+0,cd070d+100 */
+            background: #ed3237  !important;
+            background: -moz-linear-gradient(left,  #ed3237 0%, #cd070d 100%) !important;
+            background: -webkit-linear-gradient(left,  #ed3237 0%,#cd070d 100%) !important;
+            background: linear-gradient(to right,  #ed3237 0%,#cd070d 100%) !important;
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed3237', endColorstr='#cd070d',GradientType=1 ) !important;
+        }        
+   </style>
+{% endblock %}
+
+{% block js_additional %}
+    <script type="text/javascript" src="https://www.tourtrans.ru/js/online-styles/new/modules.js" charset="uft-8"></script> 
+{% endblock %}
+
+{% block content %}
+    <div class="padding-05em">
+        <div class="ttv-search" data-catalog-url="http://127.0.0.1:8000/search-tour/"></div>
+        <div class="ttv-catalog" data-email="sod12@yandex.ru"></div>
+    </div>
+{% endblock%}

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'apps.service.apps.ServiceConfig',
     'apps.tour.apps.TourConfig',
     'apps.photogallery.apps.PhotogalleryConfig',
+    'apps.feedback.apps.FeedbackConfig',
 ]
 
 MIDDLEWARE = [

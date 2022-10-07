@@ -69,6 +69,6 @@ class Tour(models.Model):
         return reverse('tour_detail', kwargs={"tour_slug": self.slug})
     
     class Meta:
-        verbose_name='Тур'
-        verbose_name_plural='Туры'
+        verbose_name = 'Тур'
+        verbose_name_plural = 'Туры'
         

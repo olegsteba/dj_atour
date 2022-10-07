@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* Стили для блока отзывов */
+.webform-feedback {
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.webform-feedback h1 {
+  margin: 0 0 1em 0;
+}
+
+.webform-feedback .webform-messages {
+  margin: 0;
+  padding: 0.5em;
+}
+
+.webform-feedback .webform-context {
+  margin: 0;
+  padding: 0;
+}
+
+.webform-feedback .webform-context .webform-context-fields {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+}
+
+.webform-feedback .webform-context .webform-context-fields .form-field {
+  margin: 0;
+  padding: 0;
+}
+
+.webform-feedback .webform-context .webform-context-fields .form-field input {
+  width: 99%;
+}
+
+.webform-feedback .webform-context .webform-context-fields .form-field select, .webform-feedback .webform-context .webform-context-fields .form-field textarea {
+  width: 98%;
+}
+
+.webform-feedback .webform-context .webform-context-fields .field-body, .webform-feedback .webform-context .webform-context-fields .field-submit {
+  grid-column: span 2;
+}
+
+.feedback-container {
+  margin: 0;
+  padding: 0;
+}
+
+.feedback-container .feedback-item {
+  margin: 0;
+  padding: 0;
+}
+
+.feedback-container .feedback-item .feedback-content {
+  margin: 0;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.feedback-container .feedback-item .feedback-content:hover {
+  background: #FFFFFF;
+  border: 0.1em solid #CB1A33;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.feedback-container .feedback-item .feedback-content .feedback-date {
+  color: #556A7D;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.feedback-container .feedback-item .feedback-content .feedback-fio {
+  font-weight: bold;
+}
+
+.feedback-container .feedback-item .feedback-content .feedback-star {
+  float: right;
+}
+
+.feedback-container .feedback-item .feedback-content .feedback-description {
+  position: relative;
+  text-align: justify;
+  overflow: hidden;
+  cursor: pointer;
+  max-height: 2.8em;
+  -webkit-transition: max-height 3s cubic-bezier(0, 1, 0, 1);
+  transition: max-height 3s cubic-bezier(0, 1, 0, 1);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.feedback-container .feedback-item .feedback-content .feedback-description .fogunderbutton {
+  width: 100%;
+  height: 2em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.feedback-container .feedback-item .feedback-content .feedback-description.active {
+  -webkit-line-clamp: none;
+  max-height: 100vh;
+  -webkit-transition: max-height 2s ease-in-out;
+  transition: max-height 2s ease-in-out;
+}
+
+/*				transition: all 0.5s ease-in-out */
+/* Стили для разных разрешений */

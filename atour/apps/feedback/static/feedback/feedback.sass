@@ -1,0 +1,99 @@
+
+/* Стили для блока отзывов */
+.webform-feedback
+	margin: 1em 0
+	padding: 1em
+	border-radius: 0.3em
+	border: 0.1em solid #FFFFFF
+	box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset
+	h1
+		margin: 0 0 1em 0
+	.webform-messages
+		margin: 0
+		padding: 0.5em
+	.webform-context
+		margin: 0
+		padding: 0
+		.webform-context-fields
+			margin: 0
+			padding: 0			
+			display: grid
+			grid-template-columns: 1fr 1fr
+			grid-gap: 0.5em
+			.form-field
+				margin: 0
+				padding: 0
+				input
+					width: 99%	
+				select, textarea
+					width: 98%	
+			.field-body, .field-submit
+				grid-column: span 2
+
+.feedback-container
+	margin: 0
+	padding: 0
+	.feedback-item
+		margin: 0
+		padding: 0
+		.feedback-content
+			margin: 0
+			padding: 0.5em
+			border-radius: 0.3em
+			border: 0.1em solid #FFFFFF
+			box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset
+			&:hover
+				background: #FFFFFF
+				border: 0.1em solid #CB1A33
+				box-shadow: 0 0.1em 0.4em rgba(203, 26, 51, 0.8), 0 0 4em rgba(0, 0, 0, 0.06) inset	
+			.feedback-date
+				color: #556A7D
+				font-style: italic
+				font-size: 0.9em
+			.feedback-fio
+				font-weight: bold
+			.feedback-star			
+				float: right
+			.feedback-description
+				position: relative
+				text-align: justify
+				overflow: hidden
+				cursor: pointer	
+				max-height: 2.8em
+				transition: max-height 3s cubic-bezier(0, 1, 0, 1)	
+				display: -webkit-box
+				-webkit-line-clamp: 2
+				-webkit-box-orient: vertical		
+				.fogunderbutton
+					width: 100%
+					height: 2em
+					position: absolute
+					bottom: 0
+					right: 0
+			.feedback-description.active
+				-webkit-line-clamp: none
+				max-height: 100vh
+				transition: max-height 2s ease-in-out
+/*				transition: all 0.5s ease-in-out */
+/* Стили для разных разрешений */
+@media screen and (min-width: 0px) and (max-width: 1280px)
+	body
+
+
+@media screen and (min-width: 0px) and (max-width: 1024px)
+	body
+
+
+@media screen and (min-width: 0px) and (max-width: 768px)
+	body
+	
+
+@media screen and (min-width: 0px) and (max-width: 600px)
+	body
+
+@media screen and (min-width: 0px) and (max-width: 480px)
+	body
+
+	
+@media screen and (min-width: 0px) and (max-width: 320px)
+	body

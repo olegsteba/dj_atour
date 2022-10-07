@@ -28,6 +28,7 @@ urlpatterns = [
     path('photogallery/', include('apps.photogallery.urls')),
     path('service/', include('apps.service.urls')),
     path('last-tour/', include('apps.tour.urls')),
+    path('feedback/', include('apps.feedback.urls')),
     path('', include('apps.page.urls')),
 ]
 

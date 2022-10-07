@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block css_additional %}
+    <link rel="stylesheet" href="{% static 'feedback/css/feedback.css'%}">
+{% endblock %}
+
+{% block js_additional %}
+    <script type="text/javascript" src="{% static 'feedback/js/feedback.js'%}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="padding-05em">
+        <h1>{{ title }}</h1>
+
+        <div class="feedback-container">
+        {% for feedback in feedbacks %}
+        <div class="feedback-item">
+            <div class="padding-05em">
+                <div class="feedback-content">
+                    <div class="feedback-date">{{ feedback.datetime_create|date:"d.m.Y" }}</div>
+                    <div class="feedback-star">
+                        {% for i in '12345' %}
+                            {% if i|add:"0" <= feedback.rating %}
+                                <img src="{% static 'feedback/images/icon-star.png' %}" />
+                            {% else %}
+                                <img src="{% static 'feedback/images/icon-star-off.png' %}" />
+                            {% endif %}
+                        {% endfor %}
+                    </div>                    
+                    <div class="feedback-fio">{{ feedback.fio }}</div>
+                    <hr />
+                    <div class="feedback-description js-feedback-description">
+                        {{ feedback.body }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+
+        {% if page_obj.has_other_pages %}
+        <div class="pagination">
+            <ul>
+                {% if page_obj.has_previous %}
+                <li class="page-num">
+                    <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+                </li>
+                {% endif %}
+                {% for p in paginator.page_range %}
+                <li class="page-num">
+                    {% if page_obj.number == p %}
+                        <span>{{ p }}</span>
+                    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                        <a href="?page={{ p }}">{{ p }}</a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <li class="page-num">
+                    <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+                </li>
+                {% endif %}            
+            </ul>
+        </div>
+        {% endif %}
+
+        <hr />
+        <div class="webform-feedback">
+            <h1>Оставить отзыв</h1>
+            {% if messages %}
+            <div class="webform-messages">
+                {% for message in messages %}
+                <div  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </div>
+                {% endfor %}
+            </div>
+            {% endif %}    
+            <div class="webform-context">    
+                <form action="{% url 'feedback_list' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %} 
+                    <div class="form-error">{{ form.non_field_errors }}</div>
+                    <div class="webform-context-fields">   
+                    {% for field in form %}                       
+                        <div class="form-field field-{{ field.name }}">
+                            {{ field }}
+                            <div class="form-error">          
+                                <div class="form-error">{{ field.errors }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                        <div class="form-field field-submit"><input type="submit" class="submit" value="Добавить" /></div>
+                    </div>
+                </form>                     
+            </div>
+        </div>
+
+    </div>
+{% endblock%}

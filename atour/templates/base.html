@@ -2,6 +2,7 @@
 {% load static %}
 {% load thumbnail %}
 {% load tours %}
+{% load feedback %}
 
 <html lang="ru">
 <head>
@@ -78,58 +79,7 @@
             <div class="container">
                 <div class="padding-05em">
                     <h1>отзывы</h1>
-                    <div class="carousel-review-container">
-                        <div class="review-container">
-                            <div class="review-item">
-                                <div class="padding-05em">
-                                    <div class="review-content">
-                                        <div class="review-date">23.08.2022</div>
-                                        <div class="review-fio">Иванов Иван Иванович</div>
-                                        <hr />
-                                        <div class="review-description">
-                                            Запланированный отпуск ждал нас в Турции. Но наша любимая компания Дан в лице менеждера Яночки предложили нам отличную замену. Немного сомневались,стоит ли с детьми ехать в другую страну, в Турции все было уже родное. Но муж взял на себя всю ответсвенность и вот мы в Ларнаке. Очень миленько. Возможно даже вернемся.                                
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-item">
-                                <div class="padding-05em">
-                                    <div class="review-content">
-                                        <div class="review-date">23.08.2022</div>
-                                        <div class="review-fio">Иванов Иван Иванович</div>
-                                        <hr />
-                                        <div class="review-description">
-                                            Запланированный отпуск ждал нас в Турции. Но наша любимая компания Дан в лице менеждера Яночки предложили нам отличную замену. Немного сомневались,стоит ли с детьми ехать в другую страну, в Турции все было уже родное. Но муж взял на себя всю ответсвенность и вот мы в Ларнаке. Очень миленько. Возможно даже вернемся.                                
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-item">
-                                <div class="padding-05em">
-                                    <div class="review-content">
-                                        <div class="review-date">23.08.2022</div>
-                                        <div class="review-fio">Иванов Иван Иванович</div>
-                                        <hr />
-                                        <div class="review-description">
-                                            Запланированный отпуск ждал нас в Турции. Но наша любимая компания Дан в лице менеждера Яночки предложили нам отличную замену. Немного сомневались,стоит ли с детьми ехать в другую страну, в Турции все было уже родное. Но муж взял на себя всю ответсвенность и вот мы в Ларнаке. Очень миленько. Возможно даже вернемся.                                
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-item">
-                                <div class="padding-05em">
-                                    <div class="review-content">
-                                        <div class="review-date">23.08.2022</div>
-                                        <div class="review-fio">Иванов Иван Иванович</div>
-                                        <hr />
-                                        <div class="review-description">
-                                            Запланированный отпуск ждал нас в Турции. Но наша любимая компания Дан в лице менеждера Яночки предложили нам отличную замену. Немного сомневались,стоит ли с детьми ехать в другую страну, в Турции все было уже родное. Но муж взял на себя всю ответсвенность и вот мы в Ларнаке. Очень миленько. Возможно даже вернемся.                                
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% last_feedback sort='-pk' count=3 %}
                 </div>
             </div>            
         </div>

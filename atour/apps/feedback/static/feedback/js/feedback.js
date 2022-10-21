@@ -4,6 +4,8 @@
             $(this).toggleClass('active')
             //$(this).slideToggle();
         });
+
+        $('.js-slider').slick();
     });
 }(jQuery));
 

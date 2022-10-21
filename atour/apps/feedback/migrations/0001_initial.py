@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('rating', models.PositiveSmallIntegerField(choices=[(1, 'Одна звезда'), (2, 'Две звезды'), (3, 'Три звезды'), (4, 'Четыре звезды'), (5, 'Пять звезд')], verbose_name='Рейтинг')),
                 ('body', models.TimeField(verbose_name='Отзыв')),
                 ('datetime_create', models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')),
-                ('datetile_update', models.DateTimeField(auto_now=True, verbose_name='Дата обновления')),
+                ('datetime_update', models.DateTimeField(auto_now=True, verbose_name='Дата обновления')),
                 ('is_published', models.BooleanField(default=False, verbose_name='Опубликовано')),
             ],
             options={

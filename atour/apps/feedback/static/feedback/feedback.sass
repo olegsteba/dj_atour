@@ -1,5 +1,5 @@
 
-/* Стили для блока отзывов */
+/* Стили для формы оставить отзыв */
 .webform-feedback
 	margin: 1em 0
 	padding: 1em
@@ -30,6 +30,7 @@
 			.field-body, .field-submit
 				grid-column: span 2
 
+/* Стили для отзывов на странице */	
 .feedback-container
 	margin: 0
 	padding: 0
@@ -75,6 +76,54 @@
 				max-height: 100vh
 				transition: max-height 2s ease-in-out
 /*				transition: all 0.5s ease-in-out */
+
+/* Стили для слайдера */
+.js-slider
+	position: relative
+	min-width: 0
+	.slick-arrow
+		display: block
+		position: absolute
+		cursor: pointer
+		border: none
+		top: 40%
+		z-index: 10
+		font-size: 0
+		width: 20px
+		height: 60px
+	.slick-prev
+		left: 0
+		background: url(../images/st-left.png) no-repeat
+		background-size: cover
+	.slick-next
+		right: 0
+		background: url(../images/st-right.png) no-repeat
+		background-size: cover
+.slick-list
+	overflow: hidden
+.slick-track
+	display: flex
+	.feedback-item
+		display: flex
+		margin: 0.5em 1em
+.feedback-content
+	margin: 0 1em
+	padding: 0.5em
+	border-radius: 0.3em
+	border: 0.1em solid #FFFFFF
+	box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset	
+	.feedback-date
+		color: #556A7D
+		font-style: italic
+		font-size: 0.9em
+	.feedback-fio
+		font-weight: bold
+	.feedback-star			
+		float: right
+	.feedback-description
+		position: relative
+		text-align: justify
+
 /* Стили для разных разрешений */
 @media screen and (min-width: 0px) and (max-width: 1280px)
 	body

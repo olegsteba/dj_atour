@@ -1,30 +1,28 @@
 {% load static %}
 {% load thumbnail %}
 
-{% block css_additional %}
-    <link rel="stylesheet" href="{% static 'feedback/css/tour.css'%}">
-{% endblock %}
+<div class="js-slider feedback">
+    {% for feedback in feedbacks %}
+    <div class="js-slider-item feedback-item">
 
-{% for feedback in feedbacks %}
-<div class="feedback-item">
-    <div class="padding-05em">
-        <div class="feedback-content">
-            <div class="feedback-date">{{ feedback.datetime_create|date:"d.m.Y" }}</div>
-            <div class="feedback-star">
-                {% for i in '12345' %}
-                    {% if i|add:"0" <= feedback.rating %}
-                        <img src="{% static 'feedback/images/icon-star.png' %}" />
-                    {% else %}
-                        <img src="{% static 'feedback/images/icon-star-off.png' %}" />
-                    {% endif %}
-                {% endfor %}
-            </div>                    
-            <div class="feedback-fio">{{ feedback.fio }}</div>
-            <hr />
-            <div class="feedback-description js-feedback-description">
-                {{ feedback.body }}
+            <div class="feedback-content">
+                <div class="feedback-date">{{ feedback.datetime_create|date:"d.m.Y" }}</div>
+                <div class="feedback-star">
+                    {% for i in '12345' %}
+                        {% if i|add:"0" <= feedback.rating %}
+                            <img src="{% static 'feedback/images/icon-star.png' %}" />
+                        {% else %}
+                            <img src="{% static 'feedback/images/icon-star-off.png' %}" />
+                        {% endif %}
+                    {% endfor %}
+                </div>                    
+                <div class="feedback-fio">{{ feedback.fio }}</div>
+                <hr />
+                <div class="feedback-description js-feedback-description">
+                    {{ feedback.body }}
+                </div>
             </div>
-        </div>
+
     </div>
+    {% endfor %}
 </div>
-{% endfor %}

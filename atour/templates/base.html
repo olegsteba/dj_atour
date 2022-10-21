@@ -3,7 +3,6 @@
 {% load thumbnail %}
 {% load tours %}
 {% load feedback %}
-
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -15,9 +14,13 @@
     <link rel="stylesheet" href="{% static 'page/css/style.css'%}">
     <link rel="stylesheet" href="{% static 'page/css/fontello.css'%}">
     <link rel="stylesheet" href="{% static 'menu/css/menu.css'%}">
+    <link rel="stylesheet" href="{% static 'tour/css/tour.css'%}">
+    <link rel="stylesheet" href="{% static 'feedback/css/feedback.css'%}">
     {% block css_additional %}{% endblock %}
     <script type="text/javascript" src="{% static 'page/js/jquery-3.6.0.js'%}"></script>
     <script type="text/javascript" src="{% static 'page/js/main.js'%}"></script>
+    <script type="text/javascript" src="{% static 'feedback/js/feedback.js'%}"></script>
+    <script type="text/javascript" src="{% static 'feedback/js/slick.min.js'%}"></script>
     {% block js_additional %}{% endblock %}
 </head>
 <body>

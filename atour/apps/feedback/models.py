@@ -30,7 +30,7 @@ class Feedback(models.Model):
         verbose_name='Дата создания',
     )
     
-    datetile_update = models.DateTimeField(
+    datetime_update = models.DateTimeField(
         auto_now=True,
         verbose_name='Дата обновления',
     )

@@ -302,6 +302,53 @@ main.content
 				border-radius: 50%
 				box-shadow: 0.3em 0.3em 0.8em 0.1em #668097
 
+/* Стили для формы оставить отзыв */
+.webform-callback
+	margin: 0.6em 0
+	padding: 1em
+	border-radius: 0.3em
+	border: 0.1em solid #FFFFFF
+	box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset
+	h1
+		margin: 0 0 1em 0
+	.webform-messages
+		margin: 0
+		padding: 0.5em
+		text-align: center
+		color: #008C00
+	.webform-context
+		margin: 0
+		padding: 0
+		.webform-context-fields
+			margin: 0
+			padding: 0
+			display: grid
+			grid-template-columns: 1fr 1fr
+			grid-gap: 0.5em
+			.form-field
+				margin: 0
+				padding: 0.5em
+				position: relative
+				.form-error
+					margin: 0
+					padding: 0
+					position: absolute
+					right: 0
+					top: 0
+					white-space: nowrap
+					ul
+						margin: 0
+						padding: 0
+						list-style: none
+						color: #FF0000
+						font-size: 0.8em
+				input
+					width: 100%	
+				select, textarea
+					width: 100%	
+			.field-message, .field-submit
+				grid-column: span 2
+
 /* Стили для блока отзывов */
 .block-reviews
 	margin: 0

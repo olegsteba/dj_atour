@@ -159,6 +159,50 @@
 		margin: 0
 		padding: 0
 		flex: 0 0 100%
+
+/* Стили для формы заказа тура */
+.webform-order
+	margin: 1em 0
+	padding: 1em
+	border-radius: 0.3em
+	border: 0.1em solid #FFFFFF
+	box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset
+	h1
+		margin: 0 0 1em 0
+	.webform-messages
+		margin: 0
+		padding: 0.5em
+		text-align: center
+		color: #008C00
+	.webform-context
+		margin: 0
+		padding: 0
+		.webform-context-fields
+			margin: 0
+			padding: 0			
+			display: grid
+			grid-template-columns: 1fr 1fr 1fr
+			grid-gap: 0.8em
+			.form-field
+				margin: 0
+				padding: 0.5em
+				position: relative
+				.form-error
+					margin: 0
+					padding: 0
+					ul
+						margin: 0
+						padding: 0
+						list-style: none
+						color: #FF0000
+						font-size: 0.8em
+				input
+					width: 98%	
+				select, textarea
+					width: 99%	
+			.field-message, .field-submit
+				grid-column: span 3
+
 /* Стили для разных разрешений */
 @media screen and (min-width: 0px) and (max-width: 1280px)
 	body

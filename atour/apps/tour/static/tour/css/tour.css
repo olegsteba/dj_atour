@@ -256,6 +256,73 @@
           flex: 0 0 100%;
 }
 
+/* Стили для формы заказа тура */
+.webform-order {
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.webform-order h1 {
+  margin: 0 0 1em 0;
+}
+
+.webform-order .webform-messages {
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  color: #008C00;
+}
+
+.webform-order .webform-context {
+  margin: 0;
+  padding: 0;
+}
+
+.webform-order .webform-context .webform-context-fields {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.8em;
+}
+
+.webform-order .webform-context .webform-context-fields .form-field {
+  margin: 0;
+  padding: 0.5em;
+  position: relative;
+}
+
+.webform-order .webform-context .webform-context-fields .form-field .form-error {
+  margin: 0;
+  padding: 0;
+}
+
+.webform-order .webform-context .webform-context-fields .form-field .form-error ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #FF0000;
+  font-size: 0.8em;
+}
+
+.webform-order .webform-context .webform-context-fields .form-field input {
+  width: 98%;
+}
+
+.webform-order .webform-context .webform-context-fields .form-field select, .webform-order .webform-context .webform-context-fields .form-field textarea {
+  width: 99%;
+}
+
+.webform-order .webform-context .webform-context-fields .field-message, .webform-order .webform-context .webform-context-fields .field-submit {
+  grid-column: span 3;
+}
+
 /* Стили для разных разрешений */
 @media screen and (min-width: 0px) and (max-width: 600px) {
   /* Стили для стиска туров */

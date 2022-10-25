@@ -1,10 +1,14 @@
 #from msilib.schema import ListView
+from django.urls import reverse_lazy
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.messages.views import SuccessMessageMixin
+from apps.page.forms import CallbackForm
 from apps.page.models import Page
+from apps.page.utils import DataMixin
 
 
-class PageDetail(DetailView):
+class PageDetail(DataMixin, DetailView):
     """Формирование страницы для показа"""
     model = Page
     template_name = 'page/page.html'
@@ -15,6 +19,21 @@ class PageDetail(DetailView):
     def get_context_data(self, *, object_list=None, **kwargs):
         """Формируем контекст для вывода"""
         context = super().get_context_data(**kwargs)
+        return context
+
+
+class PageCallback(DataMixin, SuccessMessageMixin, CreateView):
+    """Формирует форму добавления книги"""
+    form_class = CallbackForm
+    template_name = 'page/callback.html'
+    success_url = reverse_lazy('callback')
+    success_message = 'Спасибо за Ваше обращение. Наши специалисты свяжутся с Вами в ближайшее время.'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        """Формируем контекст для вывода"""
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Заказать обратный звонок')
+        context.update(c_def)
         return context
 
 

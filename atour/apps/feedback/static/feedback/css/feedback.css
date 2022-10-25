@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.feedback-all {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  top: 3em;
+}
+
 /* Стили для формы оставить отзыв */
 .webform-feedback {
   margin: 1em 0;

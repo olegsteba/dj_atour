@@ -35,11 +35,41 @@
                 <div class="tour-price">
                     {{ tour.price|floatformat:"g" }} руб.
                 </div>
-                <div class="tour-order">
+                <!-- div class="tour-order">
                     <a href="/" class="button-red">Забронировать</a>
-                </div>
+                </div -->
             </div>             
             <div class="tour-body">{% autoescape off %}{{ tour.body }}{% endautoescape %}</div>
+        </div>
+        <div class="webform-tour-order">
+            <hr />
+            <div class="webform-order">
+                <h1>Забронировать тур</h1>
+                {% if messages %}
+                <div class="webform-messages">
+                    {% for message in messages %}
+                    <div  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </div>
+                    {% endfor %}
+                </div>
+                {% endif %}    
+                <div class="webform-context">    
+                    <form action="{% url 'tour_detail' tour.slug %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %} 
+                        <div class="form-error">{{ form.non_field_errors }}</div>
+                        <div class="webform-context-fields">   
+                        {% for field in form %}                       
+                            <div class="form-field field-{{ field.name }}">
+                                {{ field }}
+                                <div class="form-error">          
+                                    <div class="form-error">{{ field.errors }}</div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                            <div class="form-field field-submit"><input type="submit" class="submit" value="Забронировать" /></div>
+                        </div>
+                    </form>                     
+                </div>
+            </div>            
         </div>
     </div>
 {% endblock %}

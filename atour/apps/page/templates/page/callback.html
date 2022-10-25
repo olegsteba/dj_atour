@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load categories %}
+
+{% block css_additional %}{% endblock %}
+{% block js_additional %}{% endblock %}
+
+{% block content %}
+
+<h1>{{title}}</h1>
+<div class="webform-callback">
+    {% if messages %}
+    <div class="webform-messages">
+        {% for message in messages %}
+        <div  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </div>
+        {% endfor %}
+    </div>
+    {% endif %}     
+     <div class="webform-context"> 
+         <form action="{% url 'callback' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            <div class="form-error">{{ form.non_field_errors }}</div>
+            <div class="webform-context-fields">   
+            {% for field in form %}                       
+                <div class="form-field field-{{ field.name }}">
+                    <div class="form-error">          
+                        <div class="form-error">{{ field.errors }}</div>
+                    </div>                    
+                    <label for={{ field.id_for_label }}>{{ field.label }}</label> {{ field }}
+                </div>
+            {% endfor %}
+                <div class="form-field field-submit"><input type="submit" class="submit" value="Отправить" /></div>
+            </div>
+         </form>                        
+     </div>                            
+</div>    
+{% endblock %}

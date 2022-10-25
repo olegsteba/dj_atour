@@ -465,6 +465,77 @@ main.content .main-container .side-column {
           box-shadow: 0.3em 0.3em 0.8em 0.1em #668097;
 }
 
+/* Стили для формы оставить отзыв */
+.webform-callback {
+  margin: 0.6em 0;
+  padding: 1em;
+  border-radius: 0.3em;
+  border: 0.1em solid #FFFFFF;
+  -webkit-box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+          box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.27), 0 0 4em rgba(0, 0, 0, 0.06) inset;
+}
+
+.webform-callback h1 {
+  margin: 0 0 1em 0;
+}
+
+.webform-callback .webform-messages {
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  color: #008C00;
+}
+
+.webform-callback .webform-context {
+  margin: 0;
+  padding: 0;
+}
+
+.webform-callback .webform-context .webform-context-fields {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+}
+
+.webform-callback .webform-context .webform-context-fields .form-field {
+  margin: 0;
+  padding: 0.5em;
+  position: relative;
+}
+
+.webform-callback .webform-context .webform-context-fields .form-field .form-error {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  white-space: nowrap;
+}
+
+.webform-callback .webform-context .webform-context-fields .form-field .form-error ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #FF0000;
+  font-size: 0.8em;
+}
+
+.webform-callback .webform-context .webform-context-fields .form-field input {
+  width: 100%;
+}
+
+.webform-callback .webform-context .webform-context-fields .form-field select, .webform-callback .webform-context .webform-context-fields .form-field textarea {
+  width: 100%;
+}
+
+.webform-callback .webform-context .webform-context-fields .field-message, .webform-callback .webform-context .webform-context-fields .field-submit {
+  grid-column: span 2;
+}
+
 /* Стили для блока отзывов */
 .block-reviews {
   margin: 0;

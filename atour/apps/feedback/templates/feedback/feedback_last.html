@@ -1,6 +1,6 @@
 {% load static %}
 {% load thumbnail %}
-
+<div class="feedback-all"><a href="{% url 'feedback_list' %}">Все отзывы >></a></div>
 <div class="js-slider feedback">
     {% for feedback in feedbacks %}
     <div class="js-slider-item feedback-item">
